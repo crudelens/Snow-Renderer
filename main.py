@@ -109,4 +109,7 @@ else:
     ob.keyframe_insert("rotation_euler")
     bpy.context.object.rotation_euler[2] = -1.0472
     print(rendertype)
+    scn = bpy.context.scene
+    scn.frame_start = 0
+    scn.frame_end = totframes
     bpy.ops.render.render('INVOKE_DEFAULT', animation=True, use_viewport=False, scene="scene")
